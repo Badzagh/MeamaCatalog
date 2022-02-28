@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import './Description.css';
+import {ReactComponent as WorldWideLogo} from '../assets/Group 161.svg';
 
 const Description = ({product, setShowDescription}) => {
 
     setTimeout(()=> {
         window.scrollTo(0,0);
+        console.log(product)
     }, 100)
 
     const [imgIndex, setImgIndex] = useState(0)
@@ -14,7 +16,7 @@ const Description = ({product, setShowDescription}) => {
             <header className="Description-header">
                 <a onClick={() => {setShowDescription(false)}}><img src="https://cdn-icons.flaticon.com/png/512/3114/premium/3114883.png?token=exp=1646026219~hmac=32f4fbe835b928c53dfced5c70837586" alt="back"></img></a>
                 <div>
-                    <a><img src="https://cdn-icons.flaticon.com/png/512/2767/premium/2767210.png?token=exp=1646025806~hmac=017799f3df848944d965f8ddd91883e0" alt="worldwide"></img></a>
+                    <WorldWideLogo />
                     <span>en</span>
                 </div>
             </header>
@@ -45,7 +47,9 @@ const Description = ({product, setShowDescription}) => {
                     }
                 </div>
                 <span className="Description-product-specifications-title">{product.title}</span>
-                <p>Lorem ipsum dollare</p> 
+                <div
+                    dangerouslySetInnerHTML={{__html: product.description}}
+                />
             </div> 
         </div>
     )

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import './Home.css';
+import './assets/georgiaer.svg'
 import {makeRequestCatalog, makeRequestInfo, makeRequestLanguages} from './DataFetching.js';
 import Description from './Modal/Description';
 import Languages from './Modal/Languages';
+import {ReactComponent as WorldWideLogo} from './assets/Group 161ds.svg';
 
 
 const Home = () => {
@@ -63,7 +65,7 @@ const Home = () => {
         <div className="home-header">
           <a><img src="https://meama.ge/assets/img/logo-dark-small.svg" alt="logo"></img></a>
           <div className="icons">
-            <a><img className="worldwide" src="https://cdn-icons.flaticon.com/png/512/3870/premium/3870936.png?token=exp=1646023838~hmac=7f4590a4ebeff0c8fb4b09ce071a2466" alt="worldwide"></img></a>
+            <WorldWideLogo />
             <span>ქა</span>
             <a><img className="downArrow" src="https://cdn-icons-png.flaticon.com/512/32/32195.png" alt="down arrow" onClick={() => setShowLanguages(true)}></img></a>
           </div>
