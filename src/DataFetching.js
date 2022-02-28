@@ -11,7 +11,6 @@ export const makeRequestCatalog = ({setDataCatalog}) => {
         })
         .then((response) => {
           setDataCatalog(response.data);
-          console.log(response.data)
         })
         .catch(error => {
             console.log(error.response.data.error)
@@ -28,7 +27,6 @@ export const makeRequestInfo = ({setDataInfo}) => {
       })
       .then((response) => {
         setDataInfo(response.data);
-        console.log(response.data)
       })
       .catch(error => {
           console.log(error.response.data.error)
