@@ -1,0 +1,45 @@
+.languages-section {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+}
+.languages-shadow {
+    height: 383px;
+    background-color: black;
+    opacity: 0.5;
+}
+.languages-container {
+    height: 306px;
+    background-color: white;
+    margin-top: -42px;
+    position: absolute;
+    width: 100%;
+    max-width: 600px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.languages-container h3 {
+    margin-left: 25px;
+    margin-bottom: 40px;
+}
+.languages-container img {
+    width: 26px;
+    margin-left: 25px;
+    margin-bottom: 34px;
+}
+.languages-container label {
+    margin-left: 20px;
+}
+.languages-container input {
+    margin-left: 186px;
+}
+.language {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    min-width: 350px;
+}
+.language div {
+    display: flex;
+}

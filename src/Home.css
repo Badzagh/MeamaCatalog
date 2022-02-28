@@ -1,0 +1,238 @@
+#root {
+  width: 100%;
+  max-width: 600px;
+  min-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: firago;
+}
+.home-header-container {
+  background-color: black;
+}
+.home-header {
+  width: 90%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+.home-header img {
+  width: 80px;
+  margin-top: 30px;
+}
+.icons {
+  display: flex;
+}
+.worldwide {
+  width: 20px !important;
+  border-radius: 50px;
+  background-color: white;
+  margin-left: 3px;
+}
+.downArrow {
+  margin-top: 36px !important;
+  width: 10px !important;
+  border-radius: 50px;
+  background-color: white;
+  margin-left: 3px;
+}
+.icons span {
+  margin-left: 8px;
+  margin-top: 28px;
+}
+.item-container-0 {
+  width: 95%;
+  max-width: 600px;
+  min-width: 355px;
+  margin-left: auto;
+  margin-top: -160px;
+}
+.item-container-0 h3 {
+  color: #ffffff;
+}
+.item-container-0 img {
+  width: 60px;
+}
+.item-container-1 img {
+  width: 84px;
+}
+.item-container-1, .item-container-2, .item-container-3, .item-container-4 {
+  width: 95%;
+  max-width: 600px;
+  min-width: 355px;
+  margin-left: auto;
+}
+.product-container-0 {
+  display: flex;
+  height: 252px;
+  min-width: 355px;
+  width: 100%;
+  margin-top: 30px;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+.product-container-1, .product-container-2, .product-container-3, .product-container-4 {
+  display: flex;
+  height: 340px;
+  margin-top: 30px;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  
+  border-radius: 10px;
+}
+
+.product-0 {
+  margin: 30px 8px 8px 8px;
+  min-width: 129px;
+  max-width: 129px;
+  height: 157px;
+  text-align: center;
+  border-radius: 10px;
+}
+.product-3 {
+  margin: 50px 8px 8px 8px;
+  min-width: 157px;
+  max-width: 157px;
+  height: 234px;
+  text-align: center;
+  border-radius: 10px;
+}
+.product-4 {
+  margin: 30px 8px 8px 8px;
+  min-width: 129px;
+  max-width: 129px;
+  height: 157px;
+  text-align: center;
+  background-color: white !important;
+  border-radius: 10px;
+}
+.subcategory-product {
+  margin: 0px 8px 8px 8px;
+  min-width: 157px;
+  max-width: 157px;
+  height: 234px;
+  text-align: center;
+  border-radius: 10px;
+}
+.product-name {
+  position: relative;
+  top: -50px;
+  height: 52px;
+}
+.product-price-0{
+  position: relative;
+  top: -65px;
+  font-weight: 750;
+}
+.product-price-3 {
+  font-weight: 750;
+}
+.product-price-4 {
+  position: relative;
+  top: -55px;
+  font-weight: 750;
+}
+.subcategory-container {
+  margin-bottom: 210px;
+}
+.subcategory {
+  width: 90%;
+  align-items: center;
+  height: 340px;
+  max-width: 575px;
+  min-width: 355px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  position:absolute;
+  left: 25px;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.subcategory-product-name {
+  position: relative;
+  height: 42px;
+}
+.subcategory-product-price{
+  position: relative;
+  font-weight: 750;
+}
+img {
+  position: relative;
+  width: 130px;
+}
+.imgs {
+  width: 130px;
+  height: 142px;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  top: -55px;
+}
+.imgs:hover {
+  top: -60px
+}
+.button {
+  border: none;
+  background-color: #ffffff;
+  border-radius: 19px;
+  text-align: center;
+  width: 66px;
+  margin: 3px; 
+  padding: 0px;
+  height: 32px;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+footer {
+  display: flex;
+  border-top: 2px solid gainsboro;
+  justify-content: space-between;
+  height: 75px;
+  width: 315px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+  align-items: center;
+}
+.Info {
+  display: flex;
+  flex-direction: column;
+}
+.Info-name {
+  opacity: 0.5;
+  font-size: 10px;
+}
+.Info-value {
+  font-weight: 750;
+}
+.socialLinks {
+  display: flex;
+}
+.socialLinks img {
+  height: 17px;
+  width: 30px;
+}
