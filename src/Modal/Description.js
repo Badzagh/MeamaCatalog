@@ -6,7 +6,6 @@ const Description = ({product, setShowDescription, language}) => {
 
     setTimeout(()=> {
         window.scrollTo(0,0);
-        console.log(product)
     }, 100)
 
     const [imgIndex, setImgIndex] = useState(0)

@@ -28,8 +28,6 @@ const Home = () => {
   const [language, setLanguage] = useState('ka')
   
   useEffect(() => {
-    console.log(dataCatalog)
-    console.log(language)
     setTimeout(() => {
       makeRequestCatalog({setDataCatalog}, `https://cms.meamacollect.ge/meama-collect/api/client/${language}`)
       makeRequestInfo({setDataInfo}, `https://cms.meamacollect.ge/meama-collect/api/client/${language}/contact-info`)
@@ -42,20 +40,20 @@ const Home = () => {
     if(e.target.value === "15"){
       setSubcategoryCocktailIndex(0)
     }
-    if(e.target.name === "ცხელი" || e.target.name === "Hot"){
+    if(e.target.id === "18"){
       setSubcategoryCocktailIndex(1)
     }
-    if(e.target.name === "ცივი"  || e.target.name === "Cold"){
+    if(e.target.id === "19"){
       setSubcategoryCocktailIndex(2)
     }
     //tea
     if(e.target.value === "12"){
       setSubcategoryTeaIndex(0)
     }
-    if(e.target.name === "შავი ჩაი" || e.target.name === "Black tea"){
+    if(e.target.id === "14"){
       setSubcategoryTeaIndex(1)
     }
-    if(e.target.name === "მწვანე ჩაი" || e.target.name === "Green tea"){
+    if(e.target.id === "13"){
       setSubcategoryTeaIndex(2)
     }
   }
@@ -72,7 +70,7 @@ const Home = () => {
         <MeamaBakground className="home-header-container-backgorund-img"/>
           <div className="home-header">
             <MeamaLogo />
-            <div className="icons">
+            <div className="icons" onClick={() => setShowLanguages(true)}>
               <WorldWideLogo />
               {language === "ka" &&
                 <span>ქა</span>
@@ -80,7 +78,7 @@ const Home = () => {
               {language === "en" &&
                 <span>en</span>
               }
-              <DwonArrowLogo onClick={() => setShowLanguages(true)}/>
+              <DwonArrowLogo/>
             </div>
           </div>
       </header>
@@ -99,7 +97,7 @@ const Home = () => {
             ))}
            {item.subCategories.map((subCategory, index) => (
               <div key={subCategory.id} className="subcategory-container">
-                <button className="button" onClick={handleClickSubCategory} name={subCategory.name} value={subCategory.parentCategoryId}>{subCategory.name}</button>
+                <button className="button" onClick={handleClickSubCategory} name={subCategory.name} value={subCategory.parentCategoryId} id={subCategory.id}>{subCategory.name}</button>
                 {itemIndex === 1 && index === subcategoryCocktailIndex &&
                   <div className="subcategory">
                     {subCategory.products.map((product) => (

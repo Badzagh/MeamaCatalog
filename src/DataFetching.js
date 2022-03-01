@@ -14,7 +14,6 @@ export const makeRequestCatalog = ({setDataCatalog}, url) => {
         })
         .catch(error => {
             console.log(error.response.data.error)
-            console.log("page not found")
         })
 }
 export const makeRequestInfo = ({setDataInfo}, url) => {
@@ -30,7 +29,6 @@ export const makeRequestInfo = ({setDataInfo}, url) => {
       })
       .catch(error => {
           console.log(error.response.data.error)
-          console.log("page not found")
       })
 }
 export const makeRequestLanguages = ({setDataLanguages}, url) => {
@@ -43,10 +41,8 @@ export const makeRequestLanguages = ({setDataLanguages}, url) => {
       })
       .then((response) => {
         setDataLanguages(response.data);
-        console.log(response.data)
       })
       .catch(error => {
           console.log(error.response.data.error)
-          console.log("page not found")
       })
 }
