@@ -30,6 +30,7 @@
 }
 .languages-container label {
     margin-left: 20px;
+    width: 75px;
 }
 .languages-container input {
     margin-left: 186px;

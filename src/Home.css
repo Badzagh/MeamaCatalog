@@ -102,6 +102,8 @@
   margin-top: 30px;
   flex-direction: row;
   overflow-x: scroll;
+  min-width: 350px;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -170,7 +172,7 @@
   align-items: center;
   height: 340px;
   max-width: 575px;
-  min-width: 355px;
+  min-width: 350px;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
