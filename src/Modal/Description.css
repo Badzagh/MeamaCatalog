@@ -121,6 +121,7 @@
     width: 35px;
     height: 83px;
     top: -30px;
+    cursor: pointer;
 }
 .Description-product-specifications-img-container:hover {
     background-color: #ff5753;

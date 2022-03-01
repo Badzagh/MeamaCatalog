@@ -217,6 +217,10 @@ img {
   justify-content: center;
   position: relative;
   top: -55px;
+  cursor: pointer;
+}
+svg {
+  cursor: pointer;
 }
 .imgs:hover {
   top: -60px
@@ -230,6 +234,7 @@ img {
   margin: 3px; 
   padding: 0px;
   height: 32px;
+  cursor: pointer;
 }
 button:hover {
   background-color: black;
