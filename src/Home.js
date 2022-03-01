@@ -5,7 +5,11 @@ import {makeRequestCatalog, makeRequestInfo, makeRequestLanguages} from './DataF
 import Description from './Modal/Description';
 import Languages from './Modal/Languages';
 import {ReactComponent as WorldWideLogo} from './assets/Group 161ds.svg';
-
+import {ReactComponent as DwonArrowLogo} from './assets/Path 639.svg';
+import {ReactComponent as SnowflakeLogo} from './assets/Path 11998vc.svg';
+import {ReactComponent as HotLogo} from './assets/Path 12003fd.svg';
+import {ReactComponent as MeamaLogo} from './assets/Group 6.svg';
+import {ReactComponent as MeamaBakground} from './assets/201201-Meama-Op.svg';
 
 const Home = () => {
 
@@ -21,34 +25,37 @@ const Home = () => {
   //
   const [productName, setProductName] = useState("")
   const [product, setProduct] = useState([])
+  const [language, setLanguage] = useState('ka')
   
   useEffect(() => {
+    console.log(dataCatalog)
+    console.log(language)
     setTimeout(() => {
-      makeRequestCatalog({setDataCatalog})
-      makeRequestInfo({setDataInfo})
-      makeRequestLanguages({setDataLanguages})
+      makeRequestCatalog({setDataCatalog}, `https://cms.meamacollect.ge/meama-collect/api/client/${language}`)
+      makeRequestInfo({setDataInfo}, `https://cms.meamacollect.ge/meama-collect/api/client/${language}/contact-info`)
+      makeRequestLanguages({setDataLanguages}, 'https://cms.meamacollect.ge/meama-collect/api/client/languages')
     }, 1000)
-  }, [])
+  }, [language])
 
   const handleClickSubCategory = (e) => {
     //cocktail
     if(e.target.value === "15"){
       setSubcategoryCocktailIndex(0)
     }
-    if(e.target.name === "ცხელი"){
+    if(e.target.name === "ცხელი" || e.target.name === "Hot"){
       setSubcategoryCocktailIndex(1)
     }
-    if(e.target.name === "ცივი"){
+    if(e.target.name === "ცივი"  || e.target.name === "Cold"){
       setSubcategoryCocktailIndex(2)
     }
     //tea
     if(e.target.value === "12"){
       setSubcategoryTeaIndex(0)
     }
-    if(e.target.name === "შავი ჩაი"){
+    if(e.target.name === "შავი ჩაი" || e.target.name === "Black tea"){
       setSubcategoryTeaIndex(1)
     }
-    if(e.target.name === "მწვანე ჩაი"){
+    if(e.target.name === "მწვანე ჩაი" || e.target.name === "Green tea"){
       setSubcategoryTeaIndex(2)
     }
   }
@@ -56,24 +63,30 @@ const Home = () => {
   return (
     <div>
       {showDescription && product.name === productName &&
-        <Description product={product} setShowDescription={setShowDescription}/>
+        <Description product={product} setShowDescription={setShowDescription} language={language}/>
       }
       {showLanguages && 
-        <Languages setShowLanguages={setShowLanguages} dataLanguages={dataLanguages}/>
+        <Languages setShowLanguages={setShowLanguages} dataLanguages={dataLanguages} setLanguage={setLanguage}/>
       }
       <header className="home-header-container">
-        <div className="home-header">
-          <a><img src="https://meama.ge/assets/img/logo-dark-small.svg" alt="logo"></img></a>
-          <div className="icons">
-            <WorldWideLogo />
-            <span>ქა</span>
-            <a><img className="downArrow" src="https://cdn-icons-png.flaticon.com/512/32/32195.png" alt="down arrow" onClick={() => setShowLanguages(true)}></img></a>
+        <MeamaBakground className="home-header-container-backgorund-img"/>
+          <div className="home-header">
+            <MeamaLogo />
+            <div className="icons">
+              <WorldWideLogo />
+              {language === "ka" &&
+                <span>ქა</span>
+              }
+              {language === "en" &&
+                <span>en</span>
+              }
+              <DwonArrowLogo onClick={() => setShowLanguages(true)}/>
+            </div>
           </div>
-        </div>
       </header>
       {dataCatalog.map((item, itemIndex) => (
         <div key={item.id} className={"item-container-" + itemIndex}>
-          <h3>{item.name}</h3>
+          <h2>{item.name}</h2>
           <div className={"product-container-" + itemIndex}>
             {item.products.map((product) => (
               <div key={product.id} className={"product-" + itemIndex} style={{ backgroundColor: product.bgColor }}>
@@ -87,10 +100,16 @@ const Home = () => {
            {item.subCategories.map((subCategory, index) => (
               <div key={subCategory.id} className="subcategory-container">
                 <button className="button" onClick={handleClickSubCategory} name={subCategory.name} value={subCategory.parentCategoryId}>{subCategory.name}</button>
-                {item.name === "მეამას კოქტეილები" && index === subcategoryCocktailIndex &&
+                {itemIndex === 1 && index === subcategoryCocktailIndex &&
                   <div className="subcategory">
                     {subCategory.products.map((product) => (
                       <div key={product.id} className="subcategory-product" style={{ backgroundColor: product.bgColor }}>
+                        {product.type === "HOT" &&
+                          <HotLogo className="subcategory-product-type-img"/>
+                        }
+                        {product.type === "COLD" &&
+                          <SnowflakeLogo className="subcategory-product-type-img"/>
+                        }
                         <div className="imgs">
                           <img src={product.mainPhoto} name={product.name} onClick={(e) => {setProduct(product); setShowDescription(true); setProductName(e.target.name)}} alt={product.name}></img>
                         </div>
@@ -100,7 +119,7 @@ const Home = () => {
                     ))}  
                   </div>
                 }
-                {item.name === "ჩაი" && index === subcategoryTeaIndex &&
+                {itemIndex === 2 && index === subcategoryTeaIndex &&
                   <div className="subcategory">
                     {subCategory.products.map((product) => (
                       <div key={product.id} className="subcategory-product" style={{ backgroundColor: product.bgColor }}>

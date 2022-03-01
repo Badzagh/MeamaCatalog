@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './Languages.css';
 
-const Languages = ({setShowLanguages, dataLanguages}) => {
+const Languages = ({setShowLanguages, dataLanguages, setLanguage}) => {
 
     setTimeout(()=> {
         window.scrollTo(0,0);
@@ -19,7 +19,7 @@ const Languages = ({setShowLanguages, dataLanguages}) => {
                                 <img src={dataLanguage.imageUrl} alt="country flag"></img>
                                 <label>{dataLanguage.name}</label>
                             </div>
-                            <input type="radio" value={dataLanguage.code} onClick={() => setShowLanguages(false)}></input>
+                            <input type="radio" value={dataLanguage.code} onClick={() => {setShowLanguages(false); setLanguage(dataLanguage.code)}}></input>
                         </div>
                     ))}
                 </div>

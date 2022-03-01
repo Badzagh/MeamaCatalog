@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-export const makeRequestCatalog = ({setDataCatalog}) => {
+export const makeRequestCatalog = ({setDataCatalog}, url) => {
     axios({
         method: 'get',
-        url: 'https://cms.meamacollect.ge/meama-collect/api/client/ka',
+        url: url,
         headers: {
             "Content-Type": "application/json"
           }
@@ -17,10 +17,10 @@ export const makeRequestCatalog = ({setDataCatalog}) => {
             console.log("page not found")
         })
 }
-export const makeRequestInfo = ({setDataInfo}) => {
+export const makeRequestInfo = ({setDataInfo}, url) => {
   axios({
       method: 'get',
-      url: 'https://cms.meamacollect.ge/meama-collect/api/client/ka/contact-info',
+      url: url,
       headers: {
           "Content-Type": "application/json"
         }
@@ -33,10 +33,10 @@ export const makeRequestInfo = ({setDataInfo}) => {
           console.log("page not found")
       })
 }
-export const makeRequestLanguages = ({setDataLanguages}) => {
+export const makeRequestLanguages = ({setDataLanguages}, url) => {
   axios({
       method: 'get',
-      url: 'https://cms.meamacollect.ge/meama-collect/api/client/languages',
+      url: url,
       headers: {
           "Content-Type": "application/json"
         }
