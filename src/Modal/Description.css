@@ -55,7 +55,7 @@
     position: absolute;
     right: 0;
     padding-right: 60px;
-    top: 120px !important;
+    top: 120px;
     max-height: 270px;
     background-color: #e8e8e8;
     border-bottom-left-radius: 50%;
@@ -64,19 +64,17 @@
     animation: slide 700ms 1 ease-in-out;
 }
 .Description-big-img {
-    position: relative;
     margin-right: auto;
     margin-left: auto;
+    margin-top: -130px;
     display: flex;
     flex-direction: column;
     justify-content: end;
     width: 100px;
     height: 377px;
-    top: -130px;
 }
 .Description-product div img {
     width: 160px;
-    top: 3px;
     left: -7px;
     transform-origin: 50% 10px;
     animation: visibl 700ms 1 ease-in-out;
