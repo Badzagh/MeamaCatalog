@@ -55,7 +55,7 @@
     position: absolute;
     right: 0;
     padding-right: 60px;
-    top: 120px;
+    top: 120px !important;
     max-height: 270px;
     background-color: #e8e8e8;
     border-bottom-left-radius: 50%;
